@@ -20,7 +20,7 @@ public:
   Payload* getPayload();
 
 private:
-  char _name[11];
+  char _name[9];
   Payload _payload[13];
 };
 
