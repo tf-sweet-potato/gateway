@@ -83,7 +83,7 @@ void Gateway::task1(void *pvParameters){
 
 //IOからの割り込み実装
 void Gateway::interrupt(){
-  Serial.println(F("interrupt"));
+  Serial.printf("interrupt SW0 %d\n", digitalRead(SW0));
 }
 
 //BLE 初期化
@@ -246,6 +246,8 @@ void Gateway::setupFirebase(std::function<void(bool)> callback){
 
 //GPIO初期化
 void Gateway::setupGpio(){
+  pinMode(SW0,INPUT_PULLUP);
+
   pinMode(LED1,OUTPUT);
   digitalWrite(LED1,LOW);
 
